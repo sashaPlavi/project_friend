@@ -1,4 +1,10 @@
 <%- include('partials/header.ejs') %>
 <h1>friends page</h1>
+<ul>
+  <% for(var i = 0; i < users.length; ++i) {%> -
+  <li>
+    <%=users[i].firstName%><% } %>
+  </li>
+</ul>
 
 <%- include('partials/footer.ejs') %>

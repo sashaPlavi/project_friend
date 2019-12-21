@@ -6,7 +6,13 @@ const year = new Date().getFullYear();
 router.get("/friends", (req, res) => {
   console.log("fri");
 
-  res.render("friends.ejs", { users, pagetitle: "friends page", year });
+  //const parusers = JSON.parse(db);
+
+  res.render("friends.ejs", {
+    users: users.db,
+    pagetitle: "friends page",
+    year
+  });
 });
 
 module.exports = router;

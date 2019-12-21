@@ -160,4 +160,5 @@ const db = [
     friends: [7, 11, 12, 13, 16, 17, 19]
   }
 ];
-module.exports = db;
+
+exports.db = db;
