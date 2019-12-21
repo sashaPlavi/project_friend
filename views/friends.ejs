@@ -1,9 +1,18 @@
 <%- include('partials/header.ejs') %>
-<h1>friends page</h1>
+<h1><%=user.firstName%> <%=user.surname%></h1>
+
+<h4>Users friends</h4>
+
 <ul>
-  <% for(var i = 0; i < users.length; ++i) {%> -
+  <% for(var i = 0; i < myfriends.length; ++i) {%>
+
   <li>
-    <%=users[i].firstName%><% } %>
+    <div class="list-items">
+      name: <%= myfriends[i].firstName%> <br />
+      surname:<%=myfriends[i].surname%> <br />
+      age:<%=myfriends[i].age%><br />
+      gender:<%=myfriends[i].gender%><% } %>
+    </div>
   </li>
 </ul>
 
