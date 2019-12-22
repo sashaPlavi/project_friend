@@ -8,6 +8,8 @@ router.get("/friends/:id", (req, res) => {
   let user = {};
   const myfriendsid = [];
   const myfriends = [];
+  const fofid = [];
+  const friendoffr = [];
   function gimiuser(id) {
     // console.log(users.db);
 
@@ -44,16 +46,42 @@ router.get("/friends/:id", (req, res) => {
     }
   }
   gimifrend(myfriendsid);
-  console.log(myfriends);
+  // console.log(myfriends);
+  gimifofid(myfriends);
+  function gimifofid(myfriends) {
+    for (let i = 0; i < myfriends.length; i++) {
+      for (let y = 0; y < myfriends[i].friends.length; y++) {
+        fofid.push(myfriends[i].friends[y]);
+      }
+    }
+  }
+  //console.log(fofid);
+  const filterid = Array.from(new Set(fofid));
+  console.log(filterid);
+  gimifrendoffrend(filterid);
+  function gimifrendoffrend(id) {
+    for (let i = 0; i < users.db.length; i++) {
+      //console.log(users.db);
+      for (let y = 0; y < id.length; y++) {
+        if (users.db[i].id == id[y]) {
+          friendoffr.push(users.db[i]);
+        }
+      }
+    }
+  }
+  console.log("fri" + friendoffr);
 
   res.render("friends.ejs", {
     users: users.db,
     user,
     myfriends,
+    friendoffr,
     userId: req.params.id,
     pagetitle: "friends page",
     year
   });
+  return fofid;
 });
+//console.log(fofid);
 
-module.exports = router;
+exports.router = router;

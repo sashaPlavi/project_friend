@@ -1,14 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const users = require("../util/database");
+const fofid = require("./friends");
 const year = new Date().getFullYear();
 
-/*router.get("/friends:id", (req, res) => {
-  res.render("friends.ejs", {
+router.get("/friendoffriends", (req, res) => {
+  const fofforfilter = fofid;
+
+  console.log(fofforfilter);
+
+  res.render("froffr.ejs", {
     users: users.db,
-    pagetitle: "friends page",
+    pagetitle: "friend of friends page",
     year
   });
 });
-*/
+
 module.exports = router;

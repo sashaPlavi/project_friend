@@ -2,14 +2,11 @@ body {
   background-color: aqua;
   margin: 0;
   text-decoration: none;
-  list-style: none;
 }
 header {
   background-color: yellow;
 }
-li {
-  text-decoration: none;
-}
+
 .flex-container {
   display: flex;
 }
@@ -22,9 +19,4 @@ li {
 }
 .flex-item a {
   text-decoration: none;
-}
-.list-items {
-  background-color: lightgrey;
-  text-decoration: none;
-  list-style: none;
 }
