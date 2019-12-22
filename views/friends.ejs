@@ -1,41 +1,42 @@
 <%- include('partials/header.ejs') %>
-<h1><%=user.firstName%> <%=user.surname%></h1>
 
-<h4>Users friends</h4>
-
-<ul>
-  <% for(var i = 0; i < myfriends.length; ++i) {%>
- <li>
-    <div class="list-items">
-      name: <%= myfriends[i].firstName%> <br />
-      surname:<%=myfriends[i].surname%> <br />
-      age:<%=myfriends[i].age%><br />
-      gender:<%=myfriends[i].gender%>
-      </div>
-      </li>
-      
-      
-    <% } %>
-      </ul>
-<div class="gugestion">
-  <a href=/friendoffriends/ >
-    <h2>frend of friend</h2>
-    <ul>
-      <% for(var i = 0; i < friendoffr.length; ++i) {%>
-      <% if( friendoffr[i].id === user.id ){
-        continue
-      }%>
-      <li>
-        <div class="list-items">
-          name: <%= friendoffr[i].firstName%> <br />
-          surname:<%=friendoffr[i].surname%> <br />
-          age:<%=friendoffr[i].age%><br />
-          gender:<%=friendoffr[i].gender%><% } %>
-        </div>
-      </li>
-    </ul>
-
-  </a>
+<div class="user">
+  <h1>User</h1>
+  <h1><%=user.firstName%> <%=user.surname%></h1>
 </div>
+<main>
+  <div class="flex-container">
+    <div class="flex-item">
+      <h2>friends</h2>
+      <ul>
+        <% for(var i = 0; i < myfriends.length; ++i) {%>
+        <li>
+          name: <%= myfriends[i].firstName%> <br />
+          surname:<%=myfriends[i].surname%> <br />
+          age:<%=myfriends[i].age%><br />
+          gender:<%=myfriends[i].gender%>
+        </li>
+
+        <% } %>
+      </ul>
+    </div>
+    <div class="flex-item">
+      <h2>frend of friend</h2>
+      <ul>
+        <% for(var i = 0; i < friendoffr.length; ++i) {%> <% if(
+        friendoffr[i].id === user.id ){ continue }%>
+        <li>
+          <div class="list-items">
+            name: <%= friendoffr[i].firstName%> <br />
+            surname:<%=friendoffr[i].surname%> <br />
+            age:<%=friendoffr[i].age%><br />
+            gender:<%=friendoffr[i].gender%>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</main>
 
 <%- include('partials/footer.ejs') %>

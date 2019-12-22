@@ -1,18 +1,24 @@
 <%- include('partials/header.ejs') %>
 <h1>home page</h1>
-<ul>
+
+<div class="friends">
+ 
   <% for(var i = 0; i < users.length; ++i) {%>
-
-  <li>
-    <a href=/friends/<%=users[i].id %>>
-      <div class="list-items">
-        name: <%=users[i].firstName%> <br />
-        surname:<%=users[i].surname%> <br />
-        age:<%=users[i].age%><br />
-        gender:<%=users[i].gender%><% } %>
-      </div>
-    </a>
-  </li>
-</ul>
-
+    
+      
+    <div class="list-items">
+        <a href=/friends/<%=users[i].id %>>
+            name: <%=users[i].firstName%> <br />
+            surname:<%=users[i].surname%> <br />
+            age:<%=users[i].age%><br />
+            gender:<%=users[i].gender%>
+            
+          </a>
+        </div>
+        <% } %>
+        
+     
+    </div>
+    
+  </main>
 <%- include('partials/footer.ejs') %>

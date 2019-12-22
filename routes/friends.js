@@ -80,8 +80,6 @@ router.get("/friends/:id", (req, res) => {
     pagetitle: "friends page",
     year
   });
-  return fofid;
 });
-//console.log(fofid);
 
 exports.router = router;
