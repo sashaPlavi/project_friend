@@ -71,11 +71,14 @@ router.get("/friends/:id", (req, res) => {
     }
   }
 
-  sugested(friendoffr);
+  sugested(filterid);
   function sugested(filtid) {
-    sugestedfr = Math.floor(Math.random() * filtid.length);
+    // console.log(filtid);
+
+    let sugestedfrind = Math.floor(Math.random() * filtid.length);
+    sugestedfr = filtid[sugestedfrind];
   }
-  // console.log(sugestedfr);
+  console.log("sug" + sugestedfr);
   res.render("friends.ejs", {
     users: users.db,
     sugestedfr,
