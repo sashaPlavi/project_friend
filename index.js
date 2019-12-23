@@ -6,10 +6,10 @@ const year = new Date().getFullYear();
 const app = express();
 const home = require("./routes/home");
 const friends = require("./routes/friends");
-const froffr = require("./routes/fof");
+const sugested = require("./routes/sugested");
 app.set("view engine", "ejs");
 app.use(express.static(path.join(rootdir, "public")));
-app.use(froffr);
+app.use(sugested);
 app.use(home);
 app.use(friends.router);
 

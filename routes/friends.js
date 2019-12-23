@@ -10,6 +10,7 @@ router.get("/friends/:id", (req, res) => {
   const myfriends = [];
   const fofid = [];
   const friendoffr = [];
+  let sugestedfr = 1;
   function gimiuser(id) {
     // console.log(users.db);
 
@@ -69,10 +70,15 @@ router.get("/friends/:id", (req, res) => {
       }
     }
   }
-  console.log("fri" + friendoffr);
 
+  sugested(friendoffr);
+  function sugested(filtid) {
+    sugestedfr = Math.floor(Math.random() * filtid.length);
+  }
+  // console.log(sugestedfr);
   res.render("friends.ejs", {
     users: users.db,
+    sugestedfr,
     user,
     myfriends,
     friendoffr,
